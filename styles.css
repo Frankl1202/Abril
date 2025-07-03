@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    color: white;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.personal-message {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+    border-bottom: 1px solid #ddd;
+}
+
+.personal-message p {
+    font-size: 1.2em;
+    color: #2d3436;
+    font-style: italic;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 0 0 15px 15px;
+}
+
+#info-panel {
+    padding: 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+#info-panel p {
+    text-align: center;
+    color: #6c757d;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+#distance-info {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #28a745;
+    min-height: 30px;
+}
+
+#question-panel {
+    padding: 30px;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+    margin-top: 20px;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-in;
+    position: relative;
+    overflow: hidden;
+    min-height: 150px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#question-panel h3 {
+    color: #2d3436;
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.btn-yes {
+    background: linear-gradient(45deg, #00b894, #00cec9);
+    color: white;
+}
+
+.btn-yes:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0,184,148,0.4);
+}
+
+.btn-no {
+    background: linear-gradient(45deg, #e17055, #d63031);
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn-no:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos para los marcadores de girasol */
+.sunflower-marker {
+    background: #ffd700;
+    border: 3px solid #ff8c00;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.sunflower-marker:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos para la línea */
+.route-line {
+    stroke: #ff6b6b;
+    stroke-width: 4;
+    stroke-dasharray: 10,5;
+    animation: dash 2s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -15;
+    }
+}
+
+/* Modal flotante */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease-in;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #ff7675, #e17055);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(255,118,117,0.3);
+    animation: slideIn 0.4s ease-out;
+}
+
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close:hover {
+    color: #ff7675;
+    transform: scale(1.2);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+    
+    #map {
+        height: 400px;
+    }
+    
+    .container {
+        margin: 10px;
+    }
+    
+    .modal-content {
+        width: 90%;
+        margin: 10% auto;
+        padding: 20px;
+    }
+} 

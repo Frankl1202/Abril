@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa: Piura - Entre Ríos</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Te quiero mucho Mor ❤️</h1>
+        <div class="personal-message">
+            <p>Abril, no sé muy bien cómo se hacen estas cosas a distancia, pero quiero ser honesto contigo. Desde hace un tiempo, me di cuenta de que, aunque nos separen la distancia, me encantas más de lo que creí posible.
+                Hay algo en ti que me hace querer arriesgarme, intentar algo bonito, aunque el mapa diga que estamos lejos. No sé qué piensas tú, pero yo quiero darme (darnos) la oportunidad de ver qué pasa.
+            </p>
+        </div>
+        <div id="map"></div>
+        <div id="info-panel">
+            <p>Haz clic en la línea para ver la distancia</p>
+            <div id="distance-info"></div>
+            <div id="question-panel" style="display: none;">
+                <h3>¿Qué dices, lo intentamos?</h3>
+                <div class="button-container">
+                    <button id="yes-btn" class="btn btn-yes">Sí</button>
+                    <button id="no-btn" class="btn btn-no">No</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal flotante -->
+        <div id="modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modal-body"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
